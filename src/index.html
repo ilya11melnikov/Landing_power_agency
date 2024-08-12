@@ -5,10 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<link rel="stylesheet" href="css/style.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		Hello Gulp!
-		<script src="js/main.min.js"></script>
+		<div class="wrapper">
+		@@include('./html/header.html')
+		<main class="main">
+			<h1 style="font-size: 5rem;text-align: center;">Hello Developer!</h1>
+		</main>
+		@@include('./html/footer.html')
+		<script src="js/script.min.js"></script>
 	</body>
 </html>

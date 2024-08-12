@@ -1,10 +1,6 @@
-.body {
-	padding: 0;
-	.inner {
-		margin: 0;
-	}
-	.main {
-		border: none;
-		mask-image: url();
-	}
-}
+@import './helpers/reset';
+@import './helpers/variables';
+@import './helpers/mixins/breakpoints';
+@import './helpers/extends/extends';
+@import './helpers/extends/buttons_extends';
+@import './base';
