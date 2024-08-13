@@ -19,12 +19,12 @@ function html() {
 				basepath: '@file',
 			}),
 		)
-		.pipe(dest(cfg.outputDir));
+		.pipe(dest(cfg.outputDir))
+		.pipe(browserSync.stream({ once: true }));
 }
 
 function styles() {
 	return src(cfg.srcDir + 'scss/**/*.{scss,sass}', { sourcemaps: true })
-		.pipe(plumber())
 		.pipe(
 			scss({
 				errLogToConsole: true,
@@ -36,7 +36,8 @@ function styles() {
 			}),
 		)
 		.pipe(csso())
-		.pipe(dest(cfg.outputDir + 'css', { sourcemaps: '.'}));
+		.pipe(dest(cfg.outputDir + 'css', { sourcemaps: '.' }))
+		.pipe(browserSync.stream({ once: true }));
 }
 
 function stylesMin() {
@@ -65,11 +66,14 @@ function scripts() {
 	return src(cfg.srcDir + 'js/**/*.js')
 		.pipe(concat('script.min.js'))
 		.pipe(terser())
-		.pipe(dest(cfg.outputDir + 'js'));
+		.pipe(dest(cfg.outputDir + 'js'))
+		.pipe(browserSync.stream({ once: true }));
 }
 
 function imageSync() {
-	return src('src/imgs/**/*', { encoding: false }).pipe(dest('app/imgs'));
+	return src('src/imgs/**/*', { encoding: false })
+		.pipe(dest('app/imgs'))
+		.pipe(browserSync.stream({ once: true }));
 }
 
 function browsersync() {
@@ -81,10 +85,10 @@ function browsersync() {
 }
 
 function watching() {
-	watch([cfg.srcDir + 'scss/**/*.scss'], styles).on('change', browserSync.reload);
-	watch([cfg.srcDir + 'js/**/*.js'], scripts).on('change', browserSync.reload);
-	watch([cfg.srcDir + '/**/*.html'], html).on('change', browserSync.reload);
-	watch([cfg.srcDir + 'imgs/**/*'], html).on('change', browserSync.reload);
+	watch([cfg.srcDir + 'scss/**/*.scss'], styles);
+	watch([cfg.srcDir + 'js/**/*.js'], scripts);
+	watch([cfg.srcDir + '/**/*.html'], html);
+	watch([cfg.srcDir + 'imgs/**/*'], imageSync);
 }
 
 exports.build = parallel(stylesMin);
