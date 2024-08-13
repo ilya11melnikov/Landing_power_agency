@@ -9,7 +9,6 @@ const scss = require('gulp-sass')(require('sass')),
 	autoprefixer = require('gulp-autoprefixer'),
 	browserSync = require('browser-sync').create(),
 	terser = require('gulp-terser'),
-	log = require('fancy-log'),
 	browserslist = ['> 1%, last 3 versions, not dead'];
 
 function html() {
@@ -24,7 +23,7 @@ function html() {
 }
 
 function styles() {
-	return src(cfg.srcDir + 'scss/**/*.{scss,sass}')
+	return src(cfg.srcDir + 'scss/**/*.{scss,sass}', { sourcemaps: true })
 		.pipe(plumber())
 		.pipe(
 			scss({
@@ -37,7 +36,29 @@ function styles() {
 			}),
 		)
 		.pipe(csso())
-		.pipe(dest(cfg.outputDir + 'css'));
+		.pipe(dest(cfg.outputDir + 'css', { sourcemaps: '.'}));
+}
+
+function stylesMin() {
+	return src(cfg.srcDir + '/**/*.{scss,sass}')
+		.pipe(plumber())
+		.pipe(
+			scss({
+				errLogToConsole: true,
+			}),
+		)
+		.pipe(
+			autoprefixer({
+				overrideBrowserslist: browserslist,
+			}),
+		)
+		.pipe(
+			csso({
+				restructure: false,
+				comments: false,
+			}),
+		)
+		.pipe(dest(cfg.buildDir + 'css'));
 }
 
 function scripts() {
@@ -48,8 +69,7 @@ function scripts() {
 }
 
 function imageSync() {
-    return src('src/imgs/**/*', { encoding: false })
-        .pipe(dest('app/imgs'));
+	return src('src/imgs/**/*', { encoding: false }).pipe(dest('app/imgs'));
 }
 
 function browsersync() {
@@ -67,5 +87,5 @@ function watching() {
 	watch([cfg.srcDir + 'imgs/**/*'], html).on('change', browserSync.reload);
 }
 
-exports.build = imageSync;
+exports.build = parallel(stylesMin);
 exports.default = parallel(html, styles, scripts, imageSync, watching, browsersync);
