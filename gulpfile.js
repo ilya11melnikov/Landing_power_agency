@@ -4,64 +4,68 @@ const scss = require('gulp-sass')(require('sass')),
 	fileinclude = require('gulp-file-include'),
 	cfg = require('./package.json').config,
 	csso = require('gulp-csso'),
+	plumber = require('gulp-plumber'),
 	concat = require('gulp-concat'),
 	autoprefixer = require('gulp-autoprefixer'),
 	browserSync = require('browser-sync').create(),
 	terser = require('gulp-terser'),
+	log = require('fancy-log'),
 	browserslist = ['> 1%, last 3 versions, not dead'];
 
-const srcDir = 'src/',
-	outputDir = 'app/',
-	buildDir = 'buils/';
-
 function html() {
-	return src([srcDir + '/**/*.html'])
+	return src([cfg.srcDir + '/**/*.html'])
 		.pipe(
 			fileinclude({
 				prefix: '@@',
 				basepath: '@file',
 			}),
 		)
-		.pipe(dest(outputDir));
+		.pipe(dest(cfg.outputDir));
 }
 
 function styles() {
-	return src(srcDir + 'scss/**/*.{scss,sass}')
+	return src(cfg.srcDir + 'scss/**/*.{scss,sass}')
+		.pipe(plumber())
 		.pipe(
 			scss({
 				errLogToConsole: true,
 			}),
 		)
-		.on('error', scss.logError)
 		.pipe(
 			autoprefixer({
-				overrideBrowserlist: browserslist,
+				overrideBrowserslist: browserslist,
 			}),
 		)
-		.pipe(dest(outputDir + 'css'));
+		.pipe(csso())
+		.pipe(dest(cfg.outputDir + 'css'));
 }
 
 function scripts() {
-	return src(srcDir + 'js/**/*.js')
+	return src(cfg.srcDir + 'js/**/*.js')
 		.pipe(concat('script.min.js'))
 		.pipe(terser())
-		.pipe(dest(outputDir + 'js'))
+		.pipe(dest(cfg.outputDir + 'js'));
+}
 
-		.pipe(browserSync.stream());
+function imageSync() {
+    return src('src/imgs/**/*', { encoding: false })
+        .pipe(dest('app/imgs'));
 }
 
 function browsersync() {
 	browserSync.init({
 		server: {
-			baseDir: outputDir,
+			baseDir: cfg.outputDir,
 		},
 	});
 }
 
 function watching() {
-	watch([srcDir + '/scss/**/*.scss'], styles).on('change', browserSync.reload);
-	watch([srcDir + '/js/**/*.js'], scripts).on('change', browserSync.reload);
-	watch([srcDir + '/**/*.html'], html).on('change', browserSync.reload);
+	watch([cfg.srcDir + 'scss/**/*.scss'], styles).on('change', browserSync.reload);
+	watch([cfg.srcDir + 'js/**/*.js'], scripts).on('change', browserSync.reload);
+	watch([cfg.srcDir + '/**/*.html'], html).on('change', browserSync.reload);
+	watch([cfg.srcDir + 'imgs/**/*'], html).on('change', browserSync.reload);
 }
 
-exports.default = parallel(html, styles, scripts, watching, browsersync);
+exports.build = imageSync;
+exports.default = parallel(html, styles, scripts, imageSync, watching, browsersync);
