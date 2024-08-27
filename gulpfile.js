@@ -12,7 +12,7 @@ const scss = require('gulp-sass')(require('sass')),
 	browserslist = ['> 1%, last 3 versions, not dead'];
 
 function html() {
-	return src([cfg.srcDir + '/**/*.html'])
+	return src([cfg.srcDir + '/*.html'])
 		.pipe(
 			fileinclude({
 				prefix: '@@',
@@ -91,5 +91,19 @@ function watching() {
 	watch([cfg.srcDir + 'imgs/**/*'], imageSync);
 }
 
-exports.build = parallel(stylesMin);
+
+async function loadPrettier() {
+    const prettier = await import('gulp-prettier');
+    return prettier.default;
+}
+
+async function pretty() {
+    const prettier = await loadPrettier();
+    return src(['src/**/*', '!src/imgs/**/*'])
+        .pipe(prettier())
+        .pipe(dest('src'));
+};
+
+exports.format = pretty;
+exports.stylesMin = stylesMin;
 exports.default = parallel(html, styles, scripts, imageSync, watching, browsersync);

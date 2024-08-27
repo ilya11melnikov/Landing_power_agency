@@ -14,10 +14,8 @@
 		"outputDir": "./app/",
 		"buildDir": "./build/"
 	},
-
 	"devDependencies": {
 		"browser-sync": "^3.0.2",
-		"fancy-log": "^2.0.0",
 		"gulp": "^5.0.0",
 		"gulp-autoprefixer": "^8.0.0",
 		"gulp-changed": "^5.0.2",
@@ -25,6 +23,7 @@
 		"gulp-csso": "^4.0.1",
 		"gulp-file-include": "^2.3.0",
 		"gulp-plumber": "^1.2.1",
+		"gulp-prettier": "^6.0.0",
 		"gulp-sass": "^5.1.0",
 		"gulp-terser": "^2.1.0",
 		"sass": "^1.77.8"
