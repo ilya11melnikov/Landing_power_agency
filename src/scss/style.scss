@@ -1,8 +1,4 @@
-@import './helpers/reset';
-@import './helpers/variables';
-@import './helpers/mixins/breakpoints';
-@import './helpers/extends/extends';
-@import './helpers/extends/buttons_extends';
-@import './helpers/extends/swiper';
-@import './base';
+@use './helpers/reset';
+@use './helpers/extends/swiper';
+@use './base';
 
