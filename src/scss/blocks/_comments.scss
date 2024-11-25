@@ -1,0 +1,35 @@
+@use '../helpers/extends/extends' as *;
+
+.comments_title {
+	margin-bottom: 11rem;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.comments__item {
+    display: block;
+    max-width: 67rem;
+    width: 100%;
+}
+
+.comments__item_text {
+	font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.comments_nav__img_w {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 8.6rem;
+    width: 8.6rem;
+}
+
+.comments_nav__img {
+    @extend %cover_img;
+}

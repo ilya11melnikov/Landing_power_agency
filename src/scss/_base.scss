@@ -32,6 +32,21 @@ body {
 .section {
 	width: 100%;
 	padding: 10rem 0;
+	&.section--bg {
+		background-color: $color_bg_2;
+	}
+}
+
+.section__title {
+	font-size: 4rem;
+	font-weight: 800;
+	line-height: 1.5;
+
+	color: $color_title;
+
+	&.section__title--center {
+		text-align: center;
+	}
 }
 
 .container {
