@@ -1,47 +1,6 @@
 @use '../helpers/extends/extends' as *;
 @use '../helpers/variables' as *;
 
-// .comments_title {
-// 	margin-bottom: 7.5rem;
-// }
-
-// .comments {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-// }
-
-// .comments__content {
-//     margin-bottom: 7.9rem;
-// }
-
-// .comments__item {
-//     display: block;
-//     max-width: 67rem;
-//     width: 100%;
-// }
-
-// .comments__item_text {
-// 	font-size: 1.6rem;
-// 	font-weight: 400;
-// 	line-height: 3.5;
-// 	text-align: center;
-//     color: $color_text_2;
-
-// }
-
-// .comments_nav__img_w {
-//     border-radius: 50%;
-//     overflow: hidden;
-//     height: 8.6rem;
-//     width: 8.6rem;
-// }
-
-// .comments_nav__img {
-//     @extend %cover_img;
-// }
-
 .comments_nav__img {
   @extend %cover_img;
 }
@@ -60,7 +19,7 @@
 	content: '';
 	width: 5.6rem;
 	height: 5rem;
-	background-image: url(../imgs/comments/quote.svg);
+	background-image: url(../../imgs/comments/quote.svg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
