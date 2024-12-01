@@ -12,6 +12,7 @@
 	width: 100%;
 	margin: 0 auto;
 }
+
 .comments::after,
 .comments::before {
 	position: absolute;
@@ -19,17 +20,38 @@
 	content: '';
 	width: 5.6rem;
 	height: 5rem;
-	background-image: url(../../imgs/comments/quote.svg);
+	background-image: url(../imgs/comments/quote.svg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
+
 .comments::after {
 	left: -6rem;
 }
 .comments::before {
 	right: -6rem;
 	rotate: 180deg;
+}
+
+
+.container__decor::after,
+.container__decor::before {
+	position: absolute;
+	top: 50rem;
+	content: '';
+	width: 9.8rem;
+	height: 7rem;
+    z-index: 100;
+	background-image: url(../imgs/comments/dots.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.container__decor::after {
+	top: 75rem;
+	left: 122rem;
 }
 
 .comments_content {
