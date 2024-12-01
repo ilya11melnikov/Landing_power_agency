@@ -1,0 +1,21 @@
+.companies__title {
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.companies {
+    display: flex;
+}
+
+.companie {
+	display: block;
+	width: 12.6rem;
+	height: 4.2rem;
+	flex-shrink: 0;
+}
+
+.companies__img {
+	@extend %contain_img;
+}
