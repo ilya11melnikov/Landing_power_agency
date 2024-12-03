@@ -1,6 +1,10 @@
 @use '../helpers/extends/extends' as *;
 @use '../helpers/variables' as *;
 
+.section__footer {
+	width: 100%;
+}
+
 .footer__top {
 	display: flex;
 	justify-content: space-between;

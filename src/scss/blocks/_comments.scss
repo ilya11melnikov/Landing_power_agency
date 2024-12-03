@@ -34,25 +34,35 @@
 	rotate: 180deg;
 }
 
-
-.container__decor::after,
-.container__decor::before {
-	position: absolute;
-	top: 50rem;
-	content: '';
-	width: 9.8rem;
-	height: 7rem;
-    z-index: 100;
-	background-image: url(../imgs/comments/dots.svg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
+.omments__w {
+	position: relative;
+	width: 100%;
 }
 
-.container__decor::after {
-	top: 75rem;
-	left: 122rem;
-}
+// .comments__w::after,
+// .comments__w::before {
+// 	position: absolute;
+
+// 	content: '';
+
+// 	width: 11.4rem;
+// 	height: 10rem;
+	
+// 	background-image: url(../imgs/comments/dots.svg);
+// 	background-position: center;
+// 	background-repeat: no-repeat;
+// 	background-size: contain;
+// }
+
+// .comments__w::after {
+// 	bottom: -10rem;
+//     right: 2rem;
+// }
+
+// .comments__w::before {
+// 	left: 2rem;
+// 	top: 20rem;
+// }
 
 .comments_content {
 	overflow: hidden;
