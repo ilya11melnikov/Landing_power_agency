@@ -1,0 +1,97 @@
+@use '../helpers/extends/extends' as *;
+@use '../helpers/variables' as *;
+
+.hero__title {
+	font-size: 6rem;
+	font-weight: 700;
+	line-height: 1.83;
+	letter-spacing: 0.2px;
+	color: $color_text_1;
+}
+
+.hero__title_span {
+	line-height: 1.66;
+	color: $main_color;
+}
+
+.hero__border {
+	display: inline-block;
+	font-size: 6rem;
+	font-weight: 700;
+	line-height: 1.66;
+	letter-spacing: 0.2px;
+
+	border: 8px solid $main_color;
+	border-radius: 12px;
+	padding: 0 3.8rem 0.94rem;
+	position: relative;
+	margin-bottom: 2.6rem;
+}
+
+.hero__border::before,
+.hero__border::after,
+.hero__border > *::before,
+.hero__border > *::after {
+	content: '';
+	width: 28px;
+	height: 28px;
+	background: white;
+	border: 8px solid $main_color;
+	border-radius: 50%;
+	position: absolute;
+}
+
+.hero__border::before {
+	top: -17px;
+	left: -17px;
+}
+.hero__border::after {
+	top: -17px;
+	right: -17px;
+}
+.hero__border > *::before {
+	bottom: -17px;
+	left: -17px;
+}
+.hero__border > *::after {
+	bottom: -17px;
+	right: -17px;
+}
+
+.hero__subtitle {
+	font-size: 2rem;
+	line-height: 1.8;
+	color: $color_text_2;
+	margin-bottom: 2.4rem;
+}
+
+.hero__bottom {
+	display: flex;
+	text-align: center;
+    column-gap: 3.5rem;
+}
+
+.hero__watch {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+    column-gap: 1.3rem;
+}
+
+.hero__watch_play {
+	display: block;
+	width: 48px;
+	height: 48px;
+	flex-shrink: 0;
+}
+
+.hero__watch_img {
+	@extend %contain_img;
+}
+
+.hero__watch_text {
+	font-size: 1.6rem;
+	line-height: 1.5;
+	color: $color_text_2;
+    text-align: left;
+}
