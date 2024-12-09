@@ -452,6 +452,7 @@
 	}
 
 	// footer####################
+
 }
 
 @include bp(619.99px) {
@@ -693,4 +694,14 @@
 	}
 
 	// helper#################
+
+	.arrow {
+		bottom: 6.7rem;
+		right: 6.7rem;
+	}
+
+	.arrow__top {
+		width: 5rem;
+		height: 5rem;
+	}
 }
