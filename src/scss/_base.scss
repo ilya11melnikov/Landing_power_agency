@@ -76,3 +76,20 @@ body {
 	min-height: 42rem;
 	background-color: $color_text_2;
 }
+
+.arrow {
+	position: absolute;
+	bottom: 8.7rem;
+    right: 8.7rem;
+    z-index: 997;
+}
+
+.arrow__top {
+	position: fixed;
+	width: 6rem;
+	height: 6rem;
+}
+
+.arrow__top {
+	@extend %contain_img;
+}
