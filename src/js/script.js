@@ -11,4 +11,38 @@ const swiperThree = new Swiper('.swiperClass3', {
     loopFillGroupWithBlank: true,
     slidesPerGroup: 1,
     speed: 1000, 
+
+    breakpoints: {
+        
+        320: {
+            slidesPerView: 3, 
+            spaceBetween: 20
+        },
+        
+        480: {
+            slidesPerView: 4,
+            spaceBetween: 25
+        },
+
+        780: {
+            slidesPerView: 5,
+            spaceBetween: 30
+        },
+    }
 });
+
+const menuButton = document.querySelector(".menu_button");
+const menuCloseButton = document.querySelector(".nav_close");
+const menu = document.querySelector(".nav");
+const body = document.querySelector(".body");
+
+menuButton.addEventListener("click", function () {
+  menu.classList.add("active");
+  body.classList.add("body--overflow_hidden");
+});
+
+menuCloseButton.addEventListener("click", function () {
+  menu.classList.remove("active");
+  body.classList.remove("body--overflow_hidden");
+});
+
