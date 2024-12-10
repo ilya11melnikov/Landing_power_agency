@@ -1,6 +1,10 @@
 @use '../helpers/extends/extends' as *;
 @use '../helpers/variables' as *;
 
+.section.section_hero {
+	overflow: hidden;
+}
+
 .hero {
 	display: flex;
     column-gap: 6rem;
