@@ -2,13 +2,26 @@
 
 .section_header {
 	width: 100%;
-	padding: 2.6rem 0;
+	padding: 1.6rem 0;
+}
+
+.header {
+    display: block;
+    height: 7rem;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255);
+    z-index: 99;
 }
 
 .header__w {
     display: flex;
     align-items: center;
 	justify-content: space-between;
+}
+
+.nav {
+	display: flex;
 }
 
 .nav__link {

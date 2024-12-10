@@ -2,149 +2,155 @@
 @use '../helpers/variables' as *;
 @use '../helpers/extends/extends' as *;
 
-@include bp(1223.99px) {
-	// hero------------
+// @include bp(1223.99px) {
+// 	// hero------------
 
-	.hero__title {
-		font-size: 5rem;
-	}
+// 	.hero__title {
+// 		font-size: 5rem;
+// 	}
 
-	.hero__border {
-		font-size: 5rem;
-		border: 7px solid #706fe5;
-	}
+// 	.hero__border {
+// 		font-size: 5rem;
+// 		border: 7px solid #706fe5;
+// 	}
 
-	.hero__subtitle {
-		font-size: 1.8rem;
-	}
+// 	.hero__subtitle {
+// 		font-size: 1.8rem;
+// 	}
 
-	.btn_1 {
-		min-width: 16.1rem;
-		height: 4.3rem;
-		padding: 1rem 3rem;
-		font-size: 1.6rem;
-	}
+// 	.btn_1 {
+// 		min-width: 16.1rem;
+// 		height: 4.3rem;
+// 		padding: 1rem 3rem;
+// 		font-size: 1.6rem;
+// 	}
 
-	.hero__watch_play {
-		width: 40px;
-		height: 40px;
-	}
+// 	.hero__watch_play {
+// 		width: 40px;
+// 		height: 40px;
+// 	}
 
-	.hero__watch_text {
-		font-size: 1.4rem;
-	}
+// 	.hero__watch_text {
+// 		font-size: 1.4rem;
+// 	}
 
-	.hero__decor.hero__decor--3 {
-		top: -9.4rem;
-		right: 0.2rem;
-		width: 10.4rem;
-		height: 10.4rem;
-	}
+// 	.hero__decor.hero__decor--3 {
+// 		top: -9.4rem;
+// 		right: 0.2rem;
+// 		width: 10.4rem;
+// 		height: 10.4rem;
+// 	}
 
-	.hero__decor.hero__decor--4 {
-		bottom: -7.4rem;
-		right: 6.7rem;
-		width: 7.4rem;
-		height: 7.4rem;
-	}
+// 	.hero__decor.hero__decor--4 {
+// 		bottom: -7.4rem;
+// 		right: 6.7rem;
+// 		width: 7.4rem;
+// 		height: 7.4rem;
+// 	}
 
-	.hero_picture {
-		height: 32rem;
-		width: 32rem;
-	}
+// 	.hero_picture {
+// 		height: 32rem;
+// 		width: 32rem;
+// 	}
 
-	.hero_picture__in {
-		height: 41rem;
-		width: 46rem;
-	}
+// 	.hero_picture__in {
+// 		height: 41rem;
+// 		width: 46rem;
+// 	}
 
-	.hero_employees__photos_item {
-		height: 3.8rem;
-		width: 3.8rem;
-	}
+// 	.hero_employees__photos_item {
+// 		height: 3.8rem;
+// 		width: 3.8rem;
+// 	}
 
-	.hero_employees__title {
-		font-size: 1.8rem;
-	}
+// 	.hero_employees__title {
+// 		font-size: 1.8rem;
+// 	}
 
-	.hero_employees {
-		width: 23rem;
-		min-height: 12.2rem;
-	}
+// 	.hero_employees {
+// 		width: 23rem;
+// 		min-height: 12.2rem;
+// 	}
 
-	.hero_employees__photos_item {
-		height: 3.8rem;
-		width: 3.8rem;
-	}
+// 	.hero_employees__photos_item {
+// 		height: 3.8rem;
+// 		width: 3.8rem;
+// 	}
 
-	.hero_employees__title {
-		font-size: 1.8rem;
-	}
+// 	.hero_employees__title {
+// 		font-size: 1.8rem;
+// 	}
 
-	.hero_employees__likes {
-		font-size: 1.4rem;
-	}
+// 	.hero_employees__likes {
+// 		font-size: 1.4rem;
+// 	}
 
-	.hero_employees__likes span {
-		width: 2rem;
-		height: 2rem;
-	}
+// 	.hero_employees__likes span {
+// 		width: 2rem;
+// 		height: 2rem;
+// 	}
 
-	// hero################
+// 	// hero################
 
-	.vidget__title {
-		font-size: 3.5rem;
-		margin-bottom: 1.2rem;
-		text-align: center;
-	}
+// 	.vidget__title {
+// 		font-size: 3.5rem;
+// 		margin-bottom: 1.2rem;
+// 		text-align: center;
+// 	}
 
-	.vidget__subtitle {
-		font-size: 1.5rem;
-		margin-bottom: 3.5rem;
-		text-align: center;
-	}
+// 	.vidget__subtitle {
+// 		font-size: 1.5rem;
+// 		margin-bottom: 3.5rem;
+// 		text-align: center;
+// 	}
 
-	.vidgets {
-		column-gap: 3rem;
-		justify-content: center;
-	}
+// 	.vidgets {
+// 		column-gap: 3rem;
+// 		justify-content: center;
+// 	}
 
-	.vidget__main_img {
-		width: 49.5rem;
-		height: 38.8rem;
-		margin-bottom: 1.4rem;
-	}
+// 	.vidget__main_img {
+// 		width: 49.5rem;
+// 		height: 38.8rem;
+// 		margin-bottom: 1.4rem;
+// 	}
 
-	.vidget__data_main {
-		font-size: 1.1rem;
-	}
+// 	.vidget__data_main {
+// 		font-size: 1.1rem;
+// 	}
 
-	.vidget__name_main {
-		font-size: 2.1rem;
-	}
+// 	.vidget__name_main {
+// 		font-size: 2.1rem;
+// 	}
 
-	.vidget__info {
-		font-size: 1.1rem;
-	}
+// 	.vidget__info {
+// 		font-size: 1.1rem;
+// 	}
 
-	.vidget__right {
-		column-gap: 3rem;
-	}
+// 	.vidget__right {
+// 		column-gap: 3rem;
+// 	}
 
-	.vidget__img {
-		width: 21.3rem;
-		height: 13.8rem;
-		margin-bottom: 1.2rem;
-	}
+// 	.vidget__img {
+// 		width: 21.3rem;
+// 		height: 13.8rem;
+// 		margin-bottom: 1.2rem;
+// 	}
 
-	.vidget__data {
-		font-size: 1.1rem;
-		margin-bottom: 0.6rem;
-	}
+// 	.vidget__data {
+// 		font-size: 1.1rem;
+// 		margin-bottom: 0.6rem;
+// 	}
 
-	.vidget__name {
-		font-size: 1.5rem;
-		margin-bottom: 2.6rem;
+// 	.vidget__name {
+// 		font-size: 1.5rem;
+// 		margin-bottom: 2.6rem;
+// 	}
+// }
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+	html {
+		font-size: calc(100dvw / 1920 * 14);
 	}
 }
 
@@ -407,8 +413,8 @@
 	}
 
 	.logo {
-		margin-bottom: 2rem;
-	}
+        margin-bottom: 1rem;
+    }
 
 	.footer__top {
 		display: flex;
@@ -458,6 +464,10 @@
 @include bp(619.99px) {
 	.section {
 		padding: 4rem 0;
+	}
+
+	.section.section_header {
+		padding: 1rem 0;
 	}
 
 	// hero-------------------
