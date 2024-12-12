@@ -30,6 +30,11 @@
 
 	color: $color_text_1;
 	text-decoration: none;
+	transition: all 0.3s ease;
+
+	&:hover {
+		color: $main_color;
+	}
 }
 
 .nav__list {
