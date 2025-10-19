@@ -1,0 +1,46 @@
+@use '../helpers/variables' as *;
+
+.section_header {
+	width: 100%;
+	padding: 1.6rem 0;
+}
+
+.header {
+    display: block;
+    height: 7rem;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255);
+    z-index: 99;
+}
+
+.header__w {
+    display: flex;
+    align-items: center;
+	justify-content: space-between;
+}
+
+.nav {
+	display: flex;
+}
+
+.nav__link {
+	font-size: 1.6rem;
+	line-height: 1.75;
+
+	color: $color_text_1;
+	text-decoration: none;
+	transition: all 0.3s ease;
+
+	&:hover {
+		color: $main_color;
+	}
+}
+
+.nav__list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 6rem;
+}
+

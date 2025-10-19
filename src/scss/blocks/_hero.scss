@@ -1,0 +1,235 @@
+@use '../helpers/extends/extends' as *;
+@use '../helpers/variables' as *;
+
+.section.section_hero {
+	overflow: hidden;
+}
+
+.hero {
+	display: flex;
+    column-gap: 6rem;
+	align-items: center;
+  }
+
+.hero__info_wrap {
+	display: block;
+	max-width: 60%;
+	flex-shrink: 0;
+}
+
+.hero__title {
+	font-size: 6rem;
+	font-weight: 700;
+	line-height: 1.83;
+	letter-spacing: 0.2px;
+	color: $color_text_1;
+}
+
+.hero__title_span {
+	line-height: 1.66;
+	color: $main_color;
+}
+
+.hero__border {
+	display: inline-block;
+	font-size: 6rem;
+	font-weight: 700;
+	line-height: 1.66;
+	letter-spacing: 0.2px;
+
+	border: 8px solid $main_color;
+	border-radius: 1.2rem;
+	padding: 0 3.8rem 0.94rem;
+	position: relative;
+	margin-bottom: 2.6rem;
+}
+
+.hero__border::before,
+.hero__border::after,
+.hero__border > *::before,
+.hero__border > *::after {
+	content: '';
+	width: 2.8rem;
+	height: 2.8rem;
+	background: white;
+	border: 0.8rem solid $main_color;
+	border-radius: 50%;
+	position: absolute;
+}
+
+.hero__border::before {
+	top: -1.7rem;
+	left: -1.7rem;
+}
+.hero__border::after {
+	top: -1.7rem;
+	right: -1.7rem;
+}
+.hero__border > *::before {
+	bottom: -1.7rem;
+	left: -1.7rem;
+}
+.hero__border > *::after {
+	bottom: -1.7rem;
+	right: -1.7rem;
+}
+
+.hero__subtitle {
+	font-size: 2rem;
+	line-height: 1.8;
+	color: $color_text_2;
+	margin-bottom: 2.4rem;
+}
+
+.hero__bottom {
+	display: flex;
+	text-align: center;
+	column-gap: 3.5rem;
+}
+
+.hero__watch {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	column-gap: 1.3rem;
+}
+
+.hero__watch_play {
+	display: block;
+	width: 48px;
+	height: 48px;
+	flex-shrink: 0;
+}
+
+.hero__watch_img {
+	@extend %contain_img;
+}
+
+.hero__watch_text {
+	font-size: 1.6rem;
+	line-height: 1.5;
+	color: $color_text_2;
+	text-align: left;
+}
+
+.hero__picture_wrap {
+	position: relative;
+	width: 46rem;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.hero_picture {
+	display: flex;
+	justify-content: center;
+	flex-shrink: 0;
+	height: 40rem;
+	width: 40rem;
+	border: 1rem solid #706fe5;
+	border-radius: 50%;
+	background-color: rgba(112, 111, 229, 0.15);
+}
+
+.hero_picture__in {
+	position: absolute;
+	bottom: 5rem;
+	height: 46rem;
+	width: 46rem;
+}
+
+.hero_picture__img {
+	@extend %contain_img;
+}
+
+.hero_employees {
+	position: absolute;
+	bottom: -3.6rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 24rem;
+	min-height: 13.2rem;
+	padding: 1.4rem 2.6rem;
+	box-shadow: 0 0.6rem 2rem 0px rgba(0, 0, 0, 0.1);
+	border-radius: 1rem;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.hero_employees__photos {
+	display: flex;
+	margin-bottom: 1rem;
+}
+
+.hero_employees__photos_item {
+	height: 4rem;
+	width: 4rem;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 2px solid #e9e8fa;
+}
+.hero_employees__photos_item:not(:first-child) {
+	margin-left: -2rem;
+}
+
+.hero_employees__photos_img {
+	@extend %contain_img;
+}
+
+.hero_employees__title {
+	margin-bottom: 0.6rem;
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: 0.2px;
+	color: #03014c;
+}
+
+.hero_employees__likes {
+	display: flex;
+	font-size: 1.6rem;
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 0.2px;
+}
+.hero_employees__likes span {
+	display: inline-block;
+	width: 2.2rem;
+	height: 2.2rem;
+	margin-right: 0.6rem;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("data:image/svg+xml,%3Csvg width='24' height='22' viewBox='0 0 24 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.1033 0.816986C11.4701 0.0737399 12.5299 0.0737401 12.8967 0.816986L15.5879 6.26995C15.7336 6.56509 16.0152 6.76966 16.3409 6.81699L22.3586 7.69141C23.1788 7.8106 23.5063 8.81857 22.9128 9.39711L18.5583 13.6416C18.3227 13.8714 18.2151 14.2024 18.2707 14.5268L19.2987 20.5202C19.4388 21.3371 18.5814 21.96 17.8477 21.5743L12.4653 18.7446C12.174 18.5915 11.826 18.5915 11.5347 18.7446L6.15226 21.5743C5.41864 21.96 4.5612 21.3371 4.70131 20.5202L5.72926 14.5268C5.7849 14.2024 5.67735 13.8714 5.44166 13.6416L1.08721 9.3971C0.493698 8.81857 0.821208 7.8106 1.64143 7.69141L7.65913 6.81699C7.98484 6.76966 8.2664 6.56509 8.41207 6.26995L11.1033 0.816986Z' fill='%23706FE5'/%3E%3C/svg%3E");
+}
+
+.hero__decor {
+	position: absolute;
+}
+.hero__decor.hero__decor--1 {
+    top: -119px;
+    left: -82px;
+	width: 4.8rem;
+	height: 4.8rem;
+}
+.hero__decor.hero__decor--2 {
+	top: -75px;
+    left: -14px;
+	width: 7rem;
+	height: 7rem;
+}
+.hero__decor.hero__decor--3 {
+	top: -7.4rem;
+	right: -5.8rem;
+	width: 12.4rem;
+	height: 12.4rem;
+}
+.hero__decor.hero__decor--4 {
+	bottom: -7.4rem;
+    right: 3.7rem;
+	width: 8.4rem;
+	height: 8.4rem;
+	background-color: #706fe5;
+	border-radius: 50%;
+}

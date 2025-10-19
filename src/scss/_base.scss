@@ -1,0 +1,94 @@
+@use './helpers/variables' as *;
+@use './helpers/extends/extends' as *;
+
+html {
+	// font-size: calc(100dvw / 1920 * 10);
+
+	font-size: 10px;
+}
+
+html,
+body {
+	height: 100%;
+	font-weight: 400;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $font_1;
+}
+
+.wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.section {
+	width: 100%;
+	padding: 10rem 0;
+	&.section--bg {
+		background-color: $color_bg_2;
+	}
+}
+
+.section__title {
+	font-size: 4rem;
+	font-weight: 800;
+	line-height: 1.5;
+
+	color: $color_title;
+
+	&.section__title--center {
+		text-align: center;
+	}
+}
+
+.container {
+	max-width: 114.4rem;
+	width: 100%;
+	padding: 0 2rem;
+
+	margin: 0 auto;
+}
+
+.logo {
+	display: block;
+	width: 94px;
+	height: 38px;
+	flex-shrink: 0;
+}
+
+.logo__img {
+	@extend %contain_img;
+}
+
+.footer {
+	padding: 5.2rem 0 5.8rem;
+	display: flex;
+	align-items: center;
+	min-height: 42rem;
+	background-color: $color_text_2;
+}
+
+.arrow {
+	position: absolute;
+	bottom: 8.7rem;
+    right: 8.7rem;
+    z-index: 97;
+}
+
+.arrow__top {
+	position: fixed;
+	width: 6rem;
+	height: 6rem;
+}
+
+.arrow__top {
+	@extend %contain_img;
+}

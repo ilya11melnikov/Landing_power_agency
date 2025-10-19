@@ -1,0 +1,31 @@
+@use '../helpers/extends/extends' as *;
+@use '../helpers/variables' as *;
+
+.companies__title {
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 1.2;
+	text-align: center;
+    margin-bottom: 4.7rem;
+}
+
+.companies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.companie {
+	display: block;
+	width: 12.6rem;
+	height: 4.2rem;
+	flex-shrink: 0;
+}
+
+.companies__img {
+	@extend %contain_img;
+}
+
+.swiperClass3 {
+    overflow: hidden;
+}
